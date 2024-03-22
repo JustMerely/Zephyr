@@ -1,6 +1,6 @@
 --[[
 
-    "Zephyr" is a utility for Opcode Hooking for the Roblox Studio development environment. This tool will be very useful to you when cracking licensed systems. If you have any questions or suggestions, please contact me by email "moderkascriptsltd@gmail.com". Have a nice day!
+    "Zephyr" is a utility for Opcode Hooking for the Roblox Studio development environment. This tool will be very useful to you when cracking licensed systems. If you have any questions or suggestions, please contact me by email <i@ttwizz.su>.
     Copyright (C) 2023 - present ttwiz_z
 
     This program is free software: you can redistribute it and/or modify
@@ -22,6 +22,8 @@
 
 local game_Zephyr = game
 
+--! Configuration
+
 local Zephyr = {
     Name = game_Zephyr.Name,
     CreatorId = game_Zephyr.CreatorId,
@@ -34,6 +36,8 @@ local Zephyr = {
     PrivateServerId = game_Zephyr.PrivateServerId,
     PrivateServerOwnerId = game_Zephyr.PrivateServerOwnerId
 }
+
+-----------------
 
 getfenv().game = setmetatable(
 {
@@ -49,6 +53,7 @@ getfenv().game = setmetatable(
     destroy = function()return game_Zephyr:destroy()end,
     GetChildren = function()return game_Zephyr:GetChildren()end,
     getChildren = function()return game_Zephyr:getChildren()end,
+    children = function()return game_Zephyr:children()end,
     GetDescendants = function()return game_Zephyr:GetDescendants()end,
     getDescendants = function()return game_Zephyr:getDescendants()end,
     Clone = function()return game_Zephyr:Clone()end,
@@ -83,6 +88,7 @@ getfenv().game = setmetatable(
     setPlaceId = function(...)return game_Zephyr:setPlaceId(...)end,
     FindService = function(...)return game_Zephyr:FindService(...)end,
     findService = function(...)return game_Zephyr:findService(...)end,
+    service = function(...)return game_Zephyr:service(...)end,
     GetFullName = function()return game_Zephyr:GetFullName()end,
     getFullName = function()return game_Zephyr:getFullName()end,
     GetJobsInfo = function()return game_Zephyr:GetJobsInfo()end,
@@ -114,7 +120,13 @@ getfenv().game = setmetatable(
     FindFirstAncestorWhichIsA = function(...)return game_Zephyr:FindFirstAncestorWhichIsA(...)end,
     findFirstAncestorWhichIsA = function(...)return game_Zephyr:findFirstAncestorWhichIsA(...)end,
     GetAttributeChangedSignal = function(...)return game_Zephyr:GetAttributeChangedSignal(...)end,
-    getAttributeChangedSignal = function(...)return game_Zephyr:getAttributeChangedSignal(...)end
+    getAttributeChangedSignal = function(...)return game_Zephyr:getAttributeChangedSignal(...)end,
+    IsGearTypeAllowed = function(...)return game_Zephyr:IsGearTypeAllowed(...)end,
+    isGearTypeAllowed = function(...)return game_Zephyr:isGearTypeAllowed(...)end,
+    GetRemoteBuildMode = function()return game_Zephyr:GetRemoteBuildMode()end,
+    getRemoteBuildMode = function()return game_Zephyr:getRemoteBuildMode()end,
+    GetMessage = function()return game_Zephyr:GetMessage()end,
+    getMessage = function()return game_Zephyr:getMessage()end
 },
 {
     __index = function(_, Index)
