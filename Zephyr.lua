@@ -22,9 +22,7 @@
 
 local game_Zephyr = game
 
---! Configuration
-
-local Zephyr = {
+local Zephyr_Indexes = {
     Name = game_Zephyr.Name,
     CreatorId = game_Zephyr.CreatorId,
     PlaceId = game_Zephyr.PlaceId,
@@ -37,100 +35,99 @@ local Zephyr = {
     PrivateServerOwnerId = game_Zephyr.PrivateServerOwnerId
 }
 
------------------
+local Zephyr_Methods = {}
 
-getfenv().game = setmetatable(
-{
-    FindFirstChild = function(...)return game_Zephyr:FindFirstChild(...)end,
-    findFirstChild = function(...)return game_Zephyr:findFirstChild(...)end,
-    WaitForChild = function(...)return game_Zephyr:WaitForChild(...)end,
-    waitForChild = function(...)return game_Zephyr:waitForChild(...)end,
-    GetService = function(...)return game_Zephyr:GetService(...)end,
-    getService = function(...)return game_Zephyr:getService(...)end,
-    IsA = function(...)return game_Zephyr:IsA(...)end,
-    isA = function(...)return game_Zephyr:isA(...)end,
-    Destroy = function()return game_Zephyr:Destroy()end,
-    destroy = function()return game_Zephyr:destroy()end,
-    GetChildren = function()return game_Zephyr:GetChildren()end,
-    getChildren = function()return game_Zephyr:getChildren()end,
-    children = function()return game_Zephyr:children()end,
-    GetDescendants = function()return game_Zephyr:GetDescendants()end,
-    getDescendants = function()return game_Zephyr:getDescendants()end,
-    Clone = function()return game_Zephyr:Clone()end,
-    clone = function()return game_Zephyr:clone()end,
-    BindToClose = function(...)return game_Zephyr:BindToClose(...)end,
-    bindToClose = function(...)return game_Zephyr:bindToClose(...)end,
-    GetPropertyChangedSignal = function(...)return game_Zephyr:GetPropertyChangedSignal(...)end,
-    getPropertyChangedSignal = function(...)return game_Zephyr:getPropertyChangedSignal(...)end,
-    FindFirstChildWhichIsA = function(...)return game_Zephyr:FindFirstChildWhichIsA(...)end,
-    findFirstChildWhichIsA = function(...)return game_Zephyr:findFirstChildWhichIsA(...)end,
-    FindFirstDescendant = function(...)return game_Zephyr:FindFirstDescendant(...)end,
-    findFirstDescendant = function(...)return game_Zephyr:findFirstDescendant(...)end,
-    AddTag = function(...)return game_Zephyr:AddTag(...)end,
-    addTag = function(...)return game_Zephyr:addTag(...)end,
-    HasTag = function(...)return game_Zephyr:HasTag(...)end,
-    hasTag = function(...)return game_Zephyr:hasTag(...)end,
-    Remove = function()return game_Zephyr:Remove()end,
-    remove = function()return game_Zephyr:remove()end,
-    GetTags = function()return game_Zephyr:GetTags()end,
-    getTags = function()return game_Zephyr:getTags()end,
-    GetActor = function()return game_Zephyr:GetActor()end,
-    getActor = function()return game_Zephyr:getActor()end,
-    IsLoaded = function()return game_Zephyr:IsLoaded()end,
-    isLoaded = function()return game_Zephyr:isLoaded()end,
-    RemoveTag = function(...)return game_Zephyr:RemoveTag(...)end,
-    removeTag = function(...)return game_Zephyr:removeTag(...)end,
-    GetDebugId = function(...)return game_Zephyr:GetDebugId(...)end,
-    getDebugId = function(...)return game_Zephyr:getDebugId(...)end,
-    GetObjects = function(...)return game_Zephyr:GetObjects(...)end,
-    getObjects = function(...)return game_Zephyr:getObjects(...)end,
-    SetPlaceId = function(...)return game_Zephyr:SetPlaceId(...)end,
-    setPlaceId = function(...)return game_Zephyr:setPlaceId(...)end,
-    FindService = function(...)return game_Zephyr:FindService(...)end,
-    findService = function(...)return game_Zephyr:findService(...)end,
-    service = function(...)return game_Zephyr:service(...)end,
-    GetFullName = function()return game_Zephyr:GetFullName()end,
-    getFullName = function()return game_Zephyr:getFullName()end,
-    GetJobsInfo = function()return game_Zephyr:GetJobsInfo()end,
-    getJobsInfo = function()return game_Zephyr:getJobsInfo()end,
-    GetAttribute = function(...)return game_Zephyr:GetAttribute(...)end,
-    getAttribute = function(...)return game_Zephyr:getAttribute(...)end,
-    IsAncestorOf = function(...)return game_Zephyr:IsAncestorOf(...)end,
-    isAncestorOf = function(...)return game_Zephyr:isAncestorOf(...)end,
-    SetAttribute = function(...)return game_Zephyr:SetAttribute(...)end,
-    setAttribute = function(...)return game_Zephyr:setAttribute(...)end,
-    GetAttributes = function()return game_Zephyr:GetAttributes()end,
-    getAttributes = function()return game_Zephyr:getAttributes()end,
-    SetUniverseId = function(...)return game_Zephyr:SetUniverseId(...)end,
-    setUniverseId = function(...)return game_Zephyr:setUniverseId(...)end,
-    IsDescendantOf = function(...)return game_Zephyr:IsDescendantOf(...)end,
-    isDescendantOf = function(...)return game_Zephyr:isDescendantOf(...)end,
-    ClearAllChildren = function()return game_Zephyr:ClearAllChildren()end,
-    clearAllChildren = function()return game_Zephyr:clearAllChildren()end,
-    FindFirstAncestor = function(...)return game_Zephyr:FindFirstAncestor(...)end,
-    findFirstAncestor = function(...)return game_Zephyr:findFirstAncestor(...)end,
-    IsPropertyModified = function(...)return game_Zephyr:IsPropertyModified(...)end,
-    isPropertyModified = function(...)return game_Zephyr:isPropertyModified(...)end,
-    FindFirstChildOfClass = function(...)return game_Zephyr:FindFirstChildOfClass(...)end,
-    findFirstChildOfClass = function(...)return game_Zephyr:findFirstChildOfClass(...)end,
-    ResetPropertyToDefault = function(...)return game_Zephyr:ResetPropertyToDefault(...)end,
-    resetPropertyToDefault = function(...)return game_Zephyr:resetPropertyToDefault(...)end,
-    FindFirstAncestorOfClass = function(...)return game_Zephyr:FindFirstAncestorOfClass(...)end,
-    findFirstAncestorOfClass = function(...)return game_Zephyr:findFirstAncestorOfClass(...)end,
-    FindFirstAncestorWhichIsA = function(...)return game_Zephyr:FindFirstAncestorWhichIsA(...)end,
-    findFirstAncestorWhichIsA = function(...)return game_Zephyr:findFirstAncestorWhichIsA(...)end,
-    GetAttributeChangedSignal = function(...)return game_Zephyr:GetAttributeChangedSignal(...)end,
-    getAttributeChangedSignal = function(...)return game_Zephyr:getAttributeChangedSignal(...)end,
-    IsGearTypeAllowed = function(...)return game_Zephyr:IsGearTypeAllowed(...)end,
-    isGearTypeAllowed = function(...)return game_Zephyr:isGearTypeAllowed(...)end,
-    GetRemoteBuildMode = function()return game_Zephyr:GetRemoteBuildMode()end,
-    getRemoteBuildMode = function()return game_Zephyr:getRemoteBuildMode()end,
-    GetMessage = function()return game_Zephyr:GetMessage()end,
-    getMessage = function()return game_Zephyr:getMessage()end
-},
+function Zephyr_Methods:FindFirstChild(...)return game_Zephyr:FindFirstChild(...)end
+function Zephyr_Methods:findFirstChild(...)return game_Zephyr:findFirstChild(...)end
+function Zephyr_Methods:WaitForChild(...)return game_Zephyr:WaitForChild(...)end
+function Zephyr_Methods:waitForChild(...)return game_Zephyr:waitForChild(...)end
+function Zephyr_Methods:GetService(...)return game_Zephyr:GetService(...)end
+function Zephyr_Methods:getService(...)return game_Zephyr:getService(...)end
+function Zephyr_Methods:IsA(...)return game_Zephyr:IsA(...)end
+function Zephyr_Methods:isA(...)return game_Zephyr:isA(...)end
+function Zephyr_Methods:Destroy()return game_Zephyr:Destroy()end
+function Zephyr_Methods:destroy()return game_Zephyr:destroy()end
+function Zephyr_Methods:GetChildren()return game_Zephyr:GetChildren()end
+function Zephyr_Methods:getChildren()return game_Zephyr:getChildren()end
+function Zephyr_Methods:children()return game_Zephyr:children()end
+function Zephyr_Methods:GetDescendants()return game_Zephyr:GetDescendants()end
+function Zephyr_Methods:getDescendants()return game_Zephyr:getDescendants()end
+function Zephyr_Methods:Clone()return game_Zephyr:Clone()end
+function Zephyr_Methods:clone()return game_Zephyr:clone()end
+function Zephyr_Methods:BindToClose(...)return game_Zephyr:BindToClose(...)end
+function Zephyr_Methods:bindToClose(...)return game_Zephyr:bindToClose(...)end
+function Zephyr_Methods:GetPropertyChangedSignal(...)return game_Zephyr:GetPropertyChangedSignal(...)end
+function Zephyr_Methods:getPropertyChangedSignal(...)return game_Zephyr:getPropertyChangedSignal(...)end
+function Zephyr_Methods:FindFirstChildWhichIsA(...)return game_Zephyr:FindFirstChildWhichIsA(...)end
+function Zephyr_Methods:findFirstChildWhichIsA(...)return game_Zephyr:findFirstChildWhichIsA(...)end
+function Zephyr_Methods:FindFirstDescendant(...)return game_Zephyr:FindFirstDescendant(...)end
+function Zephyr_Methods:findFirstDescendant(...)return game_Zephyr:findFirstDescendant(...)end
+function Zephyr_Methods:AddTag(...)return game_Zephyr:AddTag(...)end
+function Zephyr_Methods:addTag(...)return game_Zephyr:addTag(...)end
+function Zephyr_Methods:HasTag(...)return game_Zephyr:HasTag(...)end
+function Zephyr_Methods:hasTag(...)return game_Zephyr:hasTag(...)end
+function Zephyr_Methods:Remove()return game_Zephyr:Remove()end
+function Zephyr_Methods:remove()return game_Zephyr:remove()end
+function Zephyr_Methods:GetTags()return game_Zephyr:GetTags()end
+function Zephyr_Methods:getTags()return game_Zephyr:getTags()end
+function Zephyr_Methods:GetActor()return game_Zephyr:GetActor()end
+function Zephyr_Methods:getActor()return game_Zephyr:getActor()end
+function Zephyr_Methods:IsLoaded()return game_Zephyr:IsLoaded()end
+function Zephyr_Methods:isLoaded()return game_Zephyr:isLoaded()end
+function Zephyr_Methods:RemoveTag(...)return game_Zephyr:RemoveTag(...)end
+function Zephyr_Methods:removeTag(...)return game_Zephyr:removeTag(...)end
+function Zephyr_Methods:GetDebugId(...)return game_Zephyr:GetDebugId(...)end
+function Zephyr_Methods:getDebugId(...)return game_Zephyr:getDebugId(...)end
+function Zephyr_Methods:GetObjects(...)return game_Zephyr:GetObjects(...)end
+function Zephyr_Methods:getObjects(...)return game_Zephyr:getObjects(...)end
+function Zephyr_Methods:SetPlaceId(...)return game_Zephyr:SetPlaceId(...)end
+function Zephyr_Methods:setPlaceId(...)return game_Zephyr:setPlaceId(...)end
+function Zephyr_Methods:FindService(...)return game_Zephyr:FindService(...)end
+function Zephyr_Methods:findService(...)return game_Zephyr:findService(...)end
+function Zephyr_Methods:service(...)return game_Zephyr:service(...)end
+function Zephyr_Methods:GetFullName()return game_Zephyr:GetFullName()end
+function Zephyr_Methods:getFullName()return game_Zephyr:getFullName()end
+function Zephyr_Methods:GetJobsInfo()return game_Zephyr:GetJobsInfo()end
+function Zephyr_Methods:getJobsInfo()return game_Zephyr:getJobsInfo()end
+function Zephyr_Methods:GetAttribute(...)return game_Zephyr:GetAttribute(...)end
+function Zephyr_Methods:getAttribute(...)return game_Zephyr:getAttribute(...)end
+function Zephyr_Methods:IsAncestorOf(...)return game_Zephyr:IsAncestorOf(...)end
+function Zephyr_Methods:isAncestorOf(...)return game_Zephyr:isAncestorOf(...)end
+function Zephyr_Methods:SetAttribute(...)return game_Zephyr:SetAttribute(...)end
+function Zephyr_Methods:setAttribute(...)return game_Zephyr:setAttribute(...)end
+function Zephyr_Methods:GetAttributes()return game_Zephyr:GetAttributes()end
+function Zephyr_Methods:getAttributes()return game_Zephyr:getAttributes()end
+function Zephyr_Methods:SetUniverseId(...)return game_Zephyr:SetUniverseId(...)end
+function Zephyr_Methods:setUniverseId(...)return game_Zephyr:setUniverseId(...)end
+function Zephyr_Methods:IsDescendantOf(...)return game_Zephyr:IsDescendantOf(...)end
+function Zephyr_Methods:isDescendantOf(...)return game_Zephyr:isDescendantOf(...)end
+function Zephyr_Methods:ClearAllChildren()return game_Zephyr:ClearAllChildren()end
+function Zephyr_Methods:clearAllChildren()return game_Zephyr:clearAllChildren()end
+function Zephyr_Methods:FindFirstAncestor(...)return game_Zephyr:FindFirstAncestor(...)end
+function Zephyr_Methods:findFirstAncestor(...)return game_Zephyr:findFirstAncestor(...)end
+function Zephyr_Methods:IsPropertyModified(...)return game_Zephyr:IsPropertyModified(...)end
+function Zephyr_Methods:isPropertyModified(...)return game_Zephyr:isPropertyModified(...)end
+function Zephyr_Methods:FindFirstChildOfClass(...)return game_Zephyr:FindFirstChildOfClass(...)end
+function Zephyr_Methods:findFirstChildOfClass(...)return game_Zephyr:findFirstChildOfClass(...)end
+function Zephyr_Methods:ResetPropertyToDefault(...)return game_Zephyr:ResetPropertyToDefault(...)end
+function Zephyr_Methods:resetPropertyToDefault(...)return game_Zephyr:resetPropertyToDefault(...)end
+function Zephyr_Methods:FindFirstAncestorOfClass(...)return game_Zephyr:FindFirstAncestorOfClass(...)end
+function Zephyr_Methods:findFirstAncestorOfClass(...)return game_Zephyr:findFirstAncestorOfClass(...)end
+function Zephyr_Methods:FindFirstAncestorWhichIsA(...)return game_Zephyr:FindFirstAncestorWhichIsA(...)end
+function Zephyr_Methods:findFirstAncestorWhichIsA(...)return game_Zephyr:findFirstAncestorWhichIsA(...)end
+function Zephyr_Methods:GetAttributeChangedSignal(...)return game_Zephyr:GetAttributeChangedSignal(...)end
+function Zephyr_Methods:getAttributeChangedSignal(...)return game_Zephyr:getAttributeChangedSignal(...)end
+function Zephyr_Methods:IsGearTypeAllowed(...)return game_Zephyr:IsGearTypeAllowed(...)end
+function Zephyr_Methods:isGearTypeAllowed(...)return game_Zephyr:isGearTypeAllowed(...)end
+function Zephyr_Methods:GetRemoteBuildMode()return game_Zephyr:GetRemoteBuildMode()end
+function Zephyr_Methods:getRemoteBuildMode()return game_Zephyr:getRemoteBuildMode()end
+function Zephyr_Methods:GetMessage()return game_Zephyr:GetMessage()end
+function Zephyr_Methods:getMessage()return game_Zephyr:getMessage()end
+
+getfenv().game = setmetatable(Zephyr_Methods,
 {
     __index = function(_, Index)
-        return Zephyr[string.upper(string.sub(Index, 1, 1)) .. string.sub(Index, 2, -1)] or game_Zephyr[Index]
+        return Zephyr_Indexes[string.upper(string.sub(Index, 1, 1)) .. string.sub(Index, 2, -1)] or Zephyr_Indexes[string.lower(string.sub(Index, 1, 1)) .. string.sub(Index, 2, -1)] or game_Zephyr[Index]
     end,
     __newindex = function(_, Index, Value)
         game_Zephyr[Index] = Value
