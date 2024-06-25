@@ -1,6 +1,6 @@
 --[[
 
-    "Zephyr" is a utility for Opcode Hooking for the Roblox Studio development environment. This tool will be very useful to you when cracking licensed systems. If you have any questions or suggestions, please contact me by email <i@ttwizz.su>.
+    "Zephyr" is a utility for Opcode Hooking for the Roblox Studio development environment. This tool will be very useful to you when cracking licensed systems. If you have any questions or suggestions, please contact me by email <i@twix.cyou>.
     Copyright (C) 2023 - present ttwiz_z
 
     This program is free software: you can redistribute it and/or modify
@@ -17,7 +17,6 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ]]
-
 
 
 local game_Zephyr = game
